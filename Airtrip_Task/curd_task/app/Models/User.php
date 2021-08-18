@@ -19,15 +19,15 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
      * @var array
      */
     protected $fillable = [
-        'name', 'email',
+        'emp_name', 'deptid','user_status'
     ];
 
-    /**
-     * The attributes excluded from the model's JSON form.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password',
-    ];
+    public static function getemployee(){
+        $result = DB::table('User')
+                ->where('emp_name', 'like', $data['emp_name'].'%')
+                ->get()->toarray();
+        return $result;
+    }
+
+
 }

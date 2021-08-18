@@ -16,3 +16,15 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->group(['prefix' => 'api'], function () use ($router) {
+
+    $router->post('adddepartment', 'WorkController@adddepartment');
+    $router->post('updatedepartment', 'WorkController@updatedepartment');
+    $router->get('viewdepartment', 'WorkController@viewdepartment');
+    $router->post('deletedepartment', 'WorkController@deletedepartment');
+    $router->get('searchemp', 'WorkController@searchuser');
+    $router->get('addemp', 'WorkController@addemp');
+    $router->get('viewemp', 'WorkController@viewemp');
+
+});
