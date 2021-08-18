@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class UserContact extends Model
 {
-    use Authenticatable, Authorizable, HasFactory;
 
     /**
      * The attributes that are mass assignable.
